@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 17:40:57 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 19:35:00 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 19:44:54 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	ft_exit_num(char *com)
 
 	x = ft_atoi(com);
 	if (x < 0 && com[0] != '-')
+	{
+		ft_putstr_fd(com, 2);
+		ft_error_print(": numeric argument required\n", 2);
+		exit(2);
+	}
+	if (x >= 0 && com[0] == '-')
 	{
 		ft_putstr_fd(com, 2);
 		ft_error_print(": numeric argument required\n", 2);

@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 20:26:21 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/10 18:31:57 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:47:49 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,6 @@ int		ft_home_check(char *str)
 	{
 		if (ft_strcmp(str, g_env_tab[i].key) == 0)
 		{
-			tmp = g_paths.home;
-			g_paths.home = ft_strdup(g_env_tab[i].value);
-			(tmp) ? free(tmp) : 1;
-			return (1);
-		}
-		else if (ft_strcmp(str, g_env_tab[i].key) == 0)
-		{
 			tmp = g_paths.oldpwd;
 			g_paths.oldpwd = ft_strdup(g_env_tab[i].value);
 			(tmp) ? free(tmp) : 1;
@@ -81,4 +74,20 @@ int		ft_home_check(char *str)
 		i++;
 	}
 	return (0);
+}
+
+char	*ft_home(void)
+{
+	int		i;
+	char	*tmp;
+
+	i = 0;
+	tmp = NULL;
+	while (g_env_tab[i].end)
+	{
+		if (ft_strcmp("HOME", g_env_tab[i].key) == 0)
+			return (g_env_tab[i].value);
+		i++;
+	}
+	return (NULL);
 }

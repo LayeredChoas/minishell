@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 19:07:09 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/11 20:55:37 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:17:46 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,7 @@ int		ft_execve_fun(char **com)
 
 	i = 0;
 	ft_env_str();
-	if (com[0][0] == '/')
-	{
-		ft_path_coms(com);
-		exit(127);
-	}
+	(com[0][0] == '/' || com[0][0] == '.') ? ft_added_exec(com) : 1;
 	path = ft_find_path();
 	while (path != NULL && path[i] != NULL)
 	{

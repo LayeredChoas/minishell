@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 17:40:12 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/06 19:42:44 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 19:09:19 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ int		ft_slash_n(char *str)
 	if (str == NULL)
 		return (0);
 	if (str[i] == '-' && str[i + 1] == 'n')
+	{
+		i++;
+		while (str[i] == 'n')
+			i++;
+		if (!ft_isalpha(str[i]))
+			return (0);
 		return (1);
+	}
 	return (0);
 }
 
@@ -34,7 +41,8 @@ void	ft_echo(char **str)
 	newline = 0;
 	i = 0;
 	g_fail = 0;
-	(str[i] != NULL && ft_slash_n(str[i]) == 1) ? i++ : 1;
+	while (str[i] != NULL && ft_slash_n(str[i]) == 1)
+		i++;
 	newline = i;
 	while (str[i] != NULL)
 	{

@@ -6,7 +6,7 @@
 #    By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/08 17:10:59 by ayennoui          #+#    #+#              #
-#    Updated: 2020/12/11 20:55:55 by ayennoui         ###   ########.fr        #
+#    Updated: 2020/12/16 16:57:52 by ayennoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC =			srcs/ft_adv_split.c \
 				srcs/ft_tools_8.c \
 				srcs/ft_tools_9.c \
 				srcs/ft_unset.c \
+				srcs/ft_exceve_1.c \
 				main.c
 
 HEADER =	./libft/libft.h \

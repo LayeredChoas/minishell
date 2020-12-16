@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 19:58:46 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/11 20:32:08 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:44:59 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	ft_env_init(void)
 		free(s2);
 		i++;
 	}
-	ft_init_paths();
 	return ;
 }
 
@@ -62,6 +61,7 @@ int		init(void)
 	ft_init_2();
 	g_env_back = ft_char_add(NULL, ".");
 	ft_env_init();
-	ft_init_pwd();
+	ft_init_pwd(0);
+	ft_init_paths();
 	return (1);
 }

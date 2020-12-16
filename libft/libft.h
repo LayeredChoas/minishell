@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:33:24 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/11 20:04:41 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 19:13:44 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define BUFFER_SIZE 100
 
 size_t			ft_strlen(const char *str);
-int				ft_atoi(const char *str);
+long long		ft_atoi(const char *str);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);

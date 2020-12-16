@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 19:49:56 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/12 11:50:57 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:46:56 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct	s_env
 
 typedef struct	s_paths
 {
-	char *home;
 	char *pwd;
 	char *oldpwd;
 }				t_paths;
@@ -90,7 +89,7 @@ void			ft_export(char **str);
 void			ft_pwd(void);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_tab_len(t_env *tab);
-void			ft_init_pwd();
+void			ft_init_pwd(int x);
 int				ft_error_print(char *str, int ret);
 char			*ft_super_join(char *s1, char *s2, char *s3);
 void			ft_init_paths(void);
@@ -120,6 +119,10 @@ int				ft_skip_q(char *str, char type);
 void			ft_ctrl_slash(int nb);
 char			*ft_paths_ret(char *str);
 int				ft_home_check(char *str);
+void			ft_exec_path(char **com);
+int				ft_added_exec(char **com);
+char			*ft_home(void);
+void			ft_add_key_value(char *key, char *value);
 
 t_env			*g_env_tab;
 t_paths			g_paths;

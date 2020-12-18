@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:56:01 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 17:20:12 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/18 19:24:01 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_exec_path(char **com)
 	else if (com[0][1] == '.')
 	{
 		chdir("..");
-		dir = getcwd(path, 1024);
+		dir = getcwd(path, 10000);
 		chdir(g_paths.pwd);
 		tmp = ft_strjoin(dir, &com[0][2]);
 	}

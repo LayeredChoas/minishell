@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 20:12:13 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 18:52:15 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/18 19:23:53 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_init_pwd(int x)
 	dir = NULL;
 	buff = NULL;
 	tmp = NULL;
-	dir = getcwd(buff, 1024);
+	dir = getcwd(buff, 10000);
 	if (dir == NULL)
 	{
 		ft_error_pwd();

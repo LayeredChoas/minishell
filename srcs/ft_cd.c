@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:09:07 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 18:53:42 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/19 11:37:09 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,11 @@ void	ft_cd_home(char **com)
 		return ;
 	}
 	tmp = ft_strjoin(ft_home(), &com[0][1]);
-	chdir(tmp);
+	if (chdir(tmp) != 0)
+	{
+		ft_putstr_fd(tmp, 2);
+		ft_error_print(": No such file or directory\n", 1);
+	}
 	free(tmp);
 }
 

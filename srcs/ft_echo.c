@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 17:40:12 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 19:09:19 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/19 11:39:31 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_slash_n(char *str)
 		i++;
 		while (str[i] == 'n')
 			i++;
-		if (!ft_isalpha(str[i]))
+		if (str[i] != '\0')
 			return (0);
 		return (1);
 	}

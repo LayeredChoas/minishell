@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 20:26:21 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 17:47:49 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/20 11:56:20 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_skip_q(char *str, char type)
 	int i;
 
 	i = 0;
-	while (str[i] != type)
+	while (str[i] != '\0' && str[i] != type)
 		i++;
 	return (i + 1);
 }
@@ -73,6 +73,8 @@ int		ft_home_check(char *str)
 		}
 		i++;
 	}
+	free(g_paths.oldpwd);
+	g_paths.oldpwd = NULL;
 	return (0);
 }
 

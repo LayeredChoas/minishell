@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 19:03:49 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/07 20:48:59 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/19 12:33:32 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,18 @@ void	ft_free_four(char *s1, char *s2, char *s3, char *s4)
 
 void	ft_red_out_app(int ap, int start, char *out)
 {
+	DIR *ret;
+
+	ret = opendir(out);
+	if (ret != NULL)
+	{
+		ft_putstr_fd(out, 2);
+		ft_error_print(": Is a directory\n", 1);
+		closedir(ret);
+		g_fail = 1;
+		g_file_error = 127;
+		return ;
+	}
 	if (ap != start)
 		g_red.out = open(out, O_WRONLY | O_APPEND);
 	else

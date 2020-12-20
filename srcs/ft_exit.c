@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 17:40:57 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/16 19:44:54 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/20 11:52:48 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,18 @@ void	ft_exit(char **com)
 	int i;
 
 	i = 0;
-	ft_putstr("exit\n");
+	if (!com[0] || !com[1])
+		ft_putstr("exit\n");
 	if (com[0] == NULL)
 	{
 		g_exit = 1;
 		exit(0);
+	}
+	if (com[1] != NULL)
+	{
+		ft_error_print("exit: too many args\n", 1);
+		g_fail = 1;
+		return ;
 	}
 	while (com[0][i] != '\0')
 	{

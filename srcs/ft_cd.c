@@ -6,7 +6,7 @@
 /*   By: ayennoui <ayennoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:09:07 by ayennoui          #+#    #+#             */
-/*   Updated: 2020/12/19 11:37:09 by ayennoui         ###   ########.fr       */
+/*   Updated: 2020/12/20 11:54:39 by ayennoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_cd_1(char **com)
 	if (ft_strcmp(com[0], "-") == 0)
 	{
 		if (ft_home_check("OLDPWD") == 0)
-			(!g_paths.oldpwd) ? ft_error_print("cd: OLDPWD not set", 1) : 1;
+			(!g_paths.oldpwd || ft_strlen(g_paths.oldpwd) == 1) ? ft_error_print("cd: OLDPWD not set", 1) : 1;
 		else
 		{
 			ft_putstr(g_paths.oldpwd);
